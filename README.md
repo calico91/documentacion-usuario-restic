@@ -35,14 +35,20 @@ sistema):
 ```bash
 python -m venv .venv
 .venv\Scripts\activate          # Windows (en bash: source .venv/Scripts/activate)
-pip install mkdocs-material
+pip install -r requirements.txt
 ```
 
 Opción rápida — **instalación global**:
 
 ```bash
-pip install mkdocs-material
+pip install -r requirements.txt
 ```
+
+!!! tip "Por qué `requirements.txt`"
+    El repo incluye un `requirements.txt` con la dependencia (`mkdocs-material`).
+    Es el mismo archivo que usa el workflow de GitHub Pages, así garantizas que
+    local y CI usen versiones idénticas. Si prefieres pinear versiones, edita
+    `requirements.txt` (ej. `mkdocs-material==9.5.42`).
 
 ### Levantar el servidor de vista previa
 
