@@ -1,0 +1,24 @@
+# MkDocs build output
+/site/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Capturas pendientes (ignorar archivos sueltos; mantener carpeta)
+# Si quieres ignorar TODO lo de img, descomenta:
+# docs/img/*
+# !docs/img/.gitkeep

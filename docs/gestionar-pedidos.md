@@ -1,0 +1,125 @@
+# Gestionar pedidos abiertos
+
+Además de crear pedidos, puedes consultar, modificar, agregar productos, anular
+ítems parciales y anular pedidos completos.
+
+**Rol requerido:** Mesero, Cajero (consulta), Administrador (anulación).
+
+## Pantalla Pedidos
+
+1. Desde la barra inferior, toca **Pedidos**.
+2. La pantalla muestra dos pestañas:
+    - **Activos** — pedidos en estado **Abierto** (OPEN).
+    - **Finalizados** — pedidos en estado **Finalizado** (FINALIZED, listos
+        para cobrar).
+
+![Pantalla Pedidos](img/orders-list.png)
+
+### Navegación por fecha
+
+- En la parte superior hay un selector de fecha con flechas ◀ ▶.
+- Puedes moverte entre días (la app no permite fechas futuras).
+- Por defecto muestra el día actual.
+
+### Búsqueda
+
+El campo de búsqueda filtra por:
+
+- Número de pedido.
+- Nombre o apellido del cliente.
+- Número o nombre de mesa.
+
+### Tarjeta de pedido
+
+Cada tarjeta muestra:
+
+- Número de pedido.
+- Tipo: **Salón**, **Para llevar**, **Domicilio**.
+- Estado con chip de color.
+- Total a pagar.
+- Cliente.
+- Mesero que lo creó.
+- Mesa(s) (si es salón).
+- Fecha y hora.
+
+Las acciones disponibles en cada tarjeta dependen del estado:
+
+| Acción | Activos | Finalizados |
+|---|:---:|:---:|
+| **Ver detalle** | ✅ | ✅ |
+| **Agregar productos** | ✅ | ✅ |
+| **Cargos** (gestionar recargos) | ✅ | ✅ |
+| **Imprimir comanda** (cocina) | ✅ | ✅ |
+| **Imprimir precuenta** | ✅ | ✅ |
+| **Anular pedido** | ✅ | ✅ |
+
+## Ver el detalle de un pedido
+
+1. Toca la tarjeta del pedido.
+3. Se abre un modal con toda la información: items, notas, cargos, subtotal,
+    total y estado.
+
+![Detalle de pedido](img/order-detail.png)
+
+## Avanzar el estado de los ítems (servido / anulado)
+
+1. En el modal de detalle, selecciona los ítems que quieres marcar.
+2. Elige el nuevo estado:
+    - **Servido** — entregado al cliente.
+    - **Anulado** — no se entregó y se descuenta del total.
+3. Pulsa **Confirmar**.
+
+### Anulación parcial
+
+Si un ítem tiene **cantidad mayor a 1** y marcas "Anulado", la app te preguntará
+cuántas unidades anular. Por ejemplo, si pediste 3 hamburguesas y solo anulas 1,
+la app deja 1 anulada y 2 activas.
+
+![Anulación parcial](img/partial-cancel.png)
+
+## Agregar productos a un pedido existente
+
+1. Toca el pedido → **Agregar productos** (o el ícono `+` en el modal).
+2. La app abre el catálogo en un modal con las mismas funciones que al tomar un
+    pedido.
+3. Selecciona productos, cantidades, notas y combos.
+4. Pulsa **Agregar al pedido**.
+
+!!! note "Reabrir un pedido finalizado"
+    Si el pedido está en estado **FINALIZED**, la app permite agregar productos
+    y vuelve a ponerlo en **OPEN** automáticamente.
+
+## Imprimir comanda o precuenta
+
+Desde la tarjeta del pedido o desde el detalle:
+
+- **Imprimir comanda** — envía la comanda a las impresoras de cocina (rutas por
+    categoría/zona).
+- **Imprimir precuenta** — genera un ticket no fiscal con el resumen para que el
+    cliente revise antes de pagar.
+
+## Anular un pedido completo
+
+1. Toca la tarjeta del pedido → **Anular pedido**.
+2. Confirma la acción.
+
+!!! warning "Importante"
+    - Anular un pedido lo deja en estado **CANCELED** y no se puede deshacer.
+    - Si el pedido ya tiene una transacción pagada, primero reembolsa la
+        transacción (módulo **Caja**) y luego anula el pedido.
+    - Los productos anulados descuentan inventario si estaban configurados con
+        receta.
+
+## Filtro "Solo ver mis pedidos" (meseros)
+
+Si tu rol es **MESERO** y el administrador activó esta opción en tu sucursal:
+
+1. En el menú lateral encontrarás un toggle **"Solo ver mis pedidos"**.
+2. Al activarlo, la lista de Pedidos y Caja mostrará solo los pedidos que tú
+    creaste.
+
+![Toggle mesero](img/waiter-toggle.png)
+
+!!! tip "Consejo"
+    Si no ves este toggle pero eres mesero, pide al administrador que active
+    `waiterViewOwnOrdersOnly` en la configuración de tu sucursal.
