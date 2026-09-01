@@ -18,8 +18,14 @@ automático comparando lo declarado con lo esperado.
 6. (Opcional) Escribe **observaciones** (por ejemplo, "Faltante por error en
     vuelto").
 7. Pulsa **Cerrar caja**.
+8. La app muestra un **modal de confirmación** con el monto declarado que
+    acabas de escribir. Revisa que coincida con el efectivo contado en la gaveta.
+    - Pulsa **Sí, Cerrar Caja** para confirmar y finalizar el turno.
+    - Pulsa **Cancelar** (o fuera del modal) para volver sin cerrar; podrás
+      editar el monto si necesitas ajustar.
 
 ![Formulario de cierre](img/close-shift.png)
+![Confirmación de cierre](img/close-shift-confirm.png)
 
 ## Resultado del arqueo
 
