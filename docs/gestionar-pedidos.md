@@ -112,14 +112,21 @@ Desde la tarjeta del pedido o desde el detalle:
 
 ## Filtro "Solo ver mis pedidos" (meseros)
 
-Si tu rol es **MESERO** y el administrador activó esta opción en tu sucursal:
+Este filtro hace que la lista de **Pedidos** y de **Caja** muestre únicamente los
+pedidos que creó el mesero que está usando la app. Aplica a toda la sucursal
+y lo configura el administrador.
 
-1. En el menú lateral encontrarás un toggle **"Solo ver mis pedidos"**.
-2. Al activarlo, la lista de Pedidos y Caja mostrará solo los pedidos que tú
-    creaste.
+**Rol requerido:** Administrador o Super (para configurarlo).
 
-![Toggle mesero](img/waiter-toggle.png)
+1. Abre el menú lateral y toca **Configuración** para expandirla.
+2. Toca **Ajustes de Pedidos**.
+3. Activa el interruptor **"Solo ver mis pedidos (meseros)"**.
+4. Vuelve al menú lateral; el cambio ya está aplicado en la sucursal.
+
+![Pantalla Ajustes de Pedidos](img/order-settings.png)
 
 !!! tip "Consejo"
-    Si no ves este toggle pero eres mesero, pide al administrador que active
-    `waiterViewOwnOrdersOnly` en la configuración de tu sucursal.
+    Si un mesero ve pedidos de todos los compañeros y quieres que solo vea los
+    suyos, entra a **Ajustes de Pedidos** y activa el interruptor. El efecto es
+    inmediato: al refrescar, los meseros verán únicamente los pedidos que ellos
+    mismos crearon.

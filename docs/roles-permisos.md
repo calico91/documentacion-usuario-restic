@@ -53,8 +53,9 @@ pueden ejecutar:
 - **Editar el menú, inventario y usuarios**: solo `SUPER` y `ADMINISTRADOR`.
 - **Gestionar zonas de impresión y asignar categorías**: solo `SUPER`,
   `ADMINISTRADOR` y `CAJERO`.
-- **Filtrar "Solo ver mis pedidos"** (toggle para meseros): solo `SUPER` y
-  `ADMINISTRADOR` configuran este flag por sucursal.
+- **Configurar el filtro "Solo ver mis pedidos"** (en *Configuración → Ajustes
+  de Pedidos*): solo `SUPER` y `ADMINISTRADOR` configuran este flag por
+  sucursal.
 
 !!! tip "Consejo"
     Si no ves una opción que crees que deberías tener, consulta con el
