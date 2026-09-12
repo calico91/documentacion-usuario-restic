@@ -75,6 +75,22 @@ Solo disponible para **SUPER** y **ADMINISTRADOR**.
     El cambio de método de pago se registra en el log de auditoría y deja
     constancia del método anterior.
 
+### Anular una venta pagada
+
+Disponible únicamente para **SUPER** y **ADMINISTRADOR**, y solo cuando el
+turno de caja sigue **abierto**.
+
+1. En la pestaña **Caja → Historial**, toca **Anular venta** en la factura.
+2. La app abre un modal con la información del pedido y una advertencia.
+3. Escribe el **motivo** de la anulación (obligatorio, mínimo 5 caracteres).
+4. Pulsa **Anular venta**.
+
+La orden pasa a **Anulada**, se revierte el inventario descontado y la venta
+deja de contar en los ingresos de caja del turno. Si el cliente recibió
+efectivo, registra su devolución por separado desde **Egresos de caja →
+Devolución al cliente**. Detalles completos en
+[Anular una venta pagada](anular-venta.md).
+
 ### Reenviar la factura por email
 
 Si el cliente quiere recibir la factura por correo:

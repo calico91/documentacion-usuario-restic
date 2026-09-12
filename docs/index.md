@@ -22,7 +22,7 @@ Este manual está dirigido a:
 - Administración de menú, mesas, clientes, usuarios, métodos de pago, inventario,
   datos fiscales.
 - Configuración de impresoras térmicas (Bluetooth y red).
-- Reportes de ventas y exportación de datos.
+- Reportes de ventas, anulaciones y exportación de datos.
 - Solución de problemas comunes.
 
 ## ¿Qué NO cubre?

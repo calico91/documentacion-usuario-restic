@@ -1,8 +1,8 @@
-# Reportes de ventas
+# Reportes
 
-El módulo **Reportes** permite analizar las ventas de la sucursal por distintos
-criterios: rango de fechas, turno, fecha exacta, ventas por producto y ranking
-de productos más vendidos.
+El módulo **Reportes** permite analizar las ventas y anulaciones de la sucursal
+por distintos criterios: rango de fechas, turno, fecha exacta, ventas por
+producto, ranking de productos más vendidos y órdenes anuladas.
 
 **Rol requerido:** Administrador. Los cajeros ven solo sus propios turnos.
 
@@ -24,6 +24,9 @@ Selecciona primero el **tipo de reporte**:
     rango fecha-hora para ver cuántas veces se vendió cada uno.
 6. **Top de Productos Vendidos** — ranking de los productos más vendidos en un
     rango de fecha-hora.
+7. **Órdenes Anuladas** — ventas pagadas anuladas y cancelaciones pre-pago en
+    un rango de fecha-hora, con motivo y auditoría. Ver
+    [Órdenes Anuladas](#órdenes-anuladas).
 
 ## Configurar el reporte
 
@@ -161,6 +164,62 @@ La app muestra:
     "Ventas por Producto (selección)" en el mismo período.
 
 ![Top de productos](img/reports-top-products.png)
+
+## Órdenes Anuladas
+
+### Objetivo
+
+Auditar quién anula y por qué cada orden (tanto ventas pagadas anuladas como
+cancelaciones pre-pago), en un rango de fecha-hora. Permite detectar
+patrones de cancelación y conciliar la operación con la caja.
+
+### Rol
+
+Administrador.
+
+### Paso a paso
+
+1. Menú lateral → **Reportes**.
+2. En el selector de tipo elige **Órdenes Anuladas**.
+3. Define el **rango fecha-hora** (desde / hasta, con hora).
+4. Pulsa la consulta.
+
+### Resultado
+
+La app muestra una **tarjeta de resumen** con:
+
+- **Total anuladas** — cantidad de órdenes anuladas en el período.
+- **Ventas pagadas anuladas** — transacciones `SALE` canceladas después del pago.
+- **Canceladas pre-pago** — órdenes anuladas antes de pagar.
+- **Valor total** — suma de los valores anulados.
+- **Propinas** — suma de propinas (solo aplica a ventas pagadas).
+
+A continuación, una **tarjeta por cada anulación** con:
+
+- **Número de orden** y un chip de tipo: **Venta pagada** (rojo) o
+    **Anulada pre-pago** (naranja).
+- **Monto anulado** (en rojo).
+- **Motivo** de la anulación.
+- **Anulado por** — nombre del usuario que la anuló.
+- **Fecha y hora** de la anulación.
+- **Mesero**, **Cliente**, **Origen** y (solo ventas pagadas) **Factura**,
+    **Turno**, **Cajero**, **Propina**.
+- (Solo ventas pagadas) **Desglose de métodos de pago** como chips azules con
+    el monto por método.
+
+![Órdenes anuladas](img/reports-annulled-orders.png)
+
+!!! note "Cancelaciones pre-pago sin auditoría"
+    Las cancelaciones realizadas **antes** de la versión del sistema que
+    registra `cancelledAt` (migración V26_0) no aparecen en el reporte.
+    Solo verás cancelaciones que ya cuentan con fecha y motivo capturados.
+
+!!! tip "Caso de uso"
+    Si la orden anulada fue una **venta pagada**, el sistema además devolvió el
+    inventario descontado y la sacó de los ingresos de caja al momento de la
+    anulación (no es necesario hacer ningún ajuste manual en el inventario).
+    Si devolviste efectivo al cliente, registra esa salida desde
+    **Egresos de caja → Devolución al cliente**.
 
 ## Diferenciación por rol
 

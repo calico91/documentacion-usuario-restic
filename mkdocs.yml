@@ -80,6 +80,7 @@ nav:
       - Comandas (cocina): comandas-cocina.md
       - Cobrar un pedido: cobrar-pedido.md
       - Precuenta y reimpresión de factura: precuenta-factura.md
+      - Anular una venta pagada: anular-venta.md
   - Gestión de caja:
       - Apertura de turno: apertura-caja.md
       - Egresos de caja: egresos-caja.md
@@ -97,7 +98,7 @@ nav:
       - Inventario: inventario.md
       - Datos fiscales: datos-fiscales.md
       - Suscripción y facturación: suscripcion-facturacion.md
-      - Reportes de ventas: reportes.md
+      - Reportes: reportes.md
       - Zonas de impresión: zonas-impresion.md
   - Impresión:
       - Configurar impresora: impresora-configuracion.md

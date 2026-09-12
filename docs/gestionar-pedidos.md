@@ -100,15 +100,24 @@ Desde la tarjeta del pedido o desde el detalle:
 
 ## Anular un pedido completo
 
-1. Toca la tarjeta del pedido → **Anular pedido**.
-2. Confirma la acción.
+Disponible para **SUPER**, **ADMINISTRADOR**, **MESERO** y **CAJERO**
+(solo pedidos abiertos sin pago).
+
+1. Toca la tarjeta del pedido → **Anular pedido** (si está visible).
+2. Se abre un modal con la información del pedido y una advertencia. Escribe
+    el **motivo** de la anulación (obligatorio, mínimo 5 caracteres).
+3. Toca **Anular orden** para confirmar.
 
 !!! warning "Importante"
-    - Anular un pedido lo deja en estado **CANCELED** y no se puede deshacer.
-    - Si el pedido ya tiene una transacción pagada, primero reembolsa la
-        transacción (módulo **Caja**) y luego anula el pedido.
-    - Los productos anulados descuentan inventario si estaban configurados con
-        receta.
+    - Anular un pedido lo deja en estado **CANCELED` y no se puede deshacer.
+    - La cancelación queda registrada con fecha, usuario y motivo en el reporte
+        de [Órdenes Anuladas](reportes.md#órdenes-anuladas).
+    - Si el pedido ya tiene una transacción pagada, el sistema no te dejará
+        anularlo desde aquí: usa **Anular venta** desde la pestaña **Historial**
+        de Caja (ver [Anular una venta pagada](anular-venta.md)).
+    - La cancelación pre-pago **no descuenta inventario** porque el inventario
+        solo se descuenta al cobrar. Si fue tomada por error, vuelve a crear
+        el pedido.
 
 ## Filtro "Solo ver mis pedidos" (meseros)
 

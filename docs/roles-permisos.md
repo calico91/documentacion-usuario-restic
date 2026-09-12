@@ -24,6 +24,7 @@ de pantallas"* describe los módulos del menú principal a los que puedes accede
 | **Tomar pedido** | ✅ | ✅ | ✅ | | |
 | **Comandas** (cocina) | ✅ | ✅ | | ✅ | |
 | **Caja** (cobrar pedidos) | ✅ | ✅ | | | ✅ |
+| **Caja** (anular venta pagada) | ✅ | ✅ | | | |
 | **Opciones de caja** (apertura, cierre, egresos) | ✅ | ✅ | | | ✅ |
 | **Cierres pendientes** (conciliar) | ✅ | ✅ | | | |
 | **Historial de egresos** | ✅ | ✅ | | | parcial¹ |

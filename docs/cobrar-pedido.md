@@ -29,6 +29,9 @@ La pestaña **Caja** permite registrar el cobro de un pedido finalizado.
 - **Ver factura** — muestra la factura generada (también se puede reimprimir).
 - **Cambiar pago** — solo `SUPER` y `ADMINISTRADOR`: modifica los métodos de
     pago de una transacción ya cobrada (requiere motivo).
+- **Anular venta** — solo `SUPER` y `ADMINISTRADOR`: anula la transacción,
+    revierte el inventario descontado y saca la venta de los ingresos de caja
+    (requiere motivo). Ver [Anular una venta pagada](anular-venta.md).
 
 ## Cobrar un pedido (modal de transacción)
 
@@ -118,13 +121,24 @@ Si necesitas devolver el dinero de una venta ya cobrada:
 
 Si el pedido se creó por error o el cliente se fue sin consumir:
 
-1. Toca **Anular pedido** en la tarjeta.
-2. Confirma la acción.
+1. Toca **Anular pedido** en la tarjeta (solo en la pestaña **Pendientes**).
+2. Se abre un modal con la información del pedido y una advertencia. Escribe
+    el **motivo** de la anulación (obligatorio, mínimo 5 caracteres).
+3. Toca **Anular orden** para confirmar.
+
+![Anular pedido](img/cancel-order.png)
 
 !!! warning "Importante"
-    - Si ya generaste una factura, primero reembolsa la transacción y luego
-        anulas el pedido.
-    - La anulación no se puede deshacer.
+    - Si ya generaste una factura, no anules la orden desde aquí: en su lugar
+        usa **Anular venta** desde la pestaña **Historial** (ver
+        [Anular una venta pagada](anular-venta.md)). El sistema te lo impedirá
+        con un mensaje claro.
+    - La anulación no se puede deshacer. La cancelación queda registrada con
+        fecha, usuario y motivo en el reporte de
+        [Órdenes Anuladas](reportes.md#órdenes-anuladas).
+    - La cancelación pre-pago **no afecta caja ni inventario** porque la orden
+        aún no se había cobrado. Si fue tomada por error, vuelve a crear la
+        orden.
 
 ## Solución de problemas
 
